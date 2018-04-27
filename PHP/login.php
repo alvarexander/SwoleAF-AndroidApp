@@ -42,11 +42,10 @@
 				$response["error"] = FALSE;
 				$row = $result->fetch_assoc();
 				$id = $row['UserID'];
-				$uname = $row['LastName'];
+				$uname = $username;
 				$response["uname"] = $uname;
-				//	echo $id;
 				session_start();
-				$_SESSION['user'] = $uname;
+				$_SESSION['user'] = $id;
 				
 				echo json_encode($response);
         		
